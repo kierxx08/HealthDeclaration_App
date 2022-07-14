@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cu_main_layout"
+    tools:context=".change_username">
+
+    <ImageView
+        android:id="@+id/cu_cover"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/doctor_cover" />
+
+    <RelativeLayout
+        android:id="@+id/prfl_layout"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cu_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/cu_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:text="Kier Asis"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/textColor"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/prfl_layout"/>
+
+    <TextView
+        android:id="@+id/cutv_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="kierxx08"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/textColor"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/cu_fullname"/>
+    <RelativeLayout
+        android:id="@+id/RL_00"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cutv_username">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/cu_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/space"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Enter New Username"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="50dp"
+            android:textAlignment="center"
+            app:met_floatingLabel="normal"
+            android:textColor="@android:color/black"
+            android:textCursorDrawable="@android:color/black"
+            app:met_baseColor="@android:color/black"
+            app:met_floatingLabelTextColor="@android:color/black"
+            app:met_helperTextColor="@android:color/black"
+            app:met_primaryColor="@android:color/black"
+            app:met_textColor="@android:color/black"
+            app:met_underlineColor="@android:color/black"/>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true" />
+
+
+
+        <Button
+            android:id="@+id/cu_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius_001"
+            android:textColor="#000000"
+            android:layout_gravity="bottom"
+            android:text="Update Username"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

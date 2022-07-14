@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".family.family_activity_member_info">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fami_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/family_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/fami_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fami_toolbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/cardLin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/prfl_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/fami_toolbar"
+                        android:background="@drawable/family_cover" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/prfl_cover">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/fami_profile"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="20dp"
+                            android:src="@mipmap/ic_launcher"
+                            android:visibility="gone"
+                            app:civ_border_color="#FF000000"
+                            app:civ_border_width="2dp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/fami_change_profile"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignRight="@+id/fami_profile"
+                            android:layout_alignBottom="@+id/fami_profile"
+                            android:src="@drawable/icon_camera"
+                            android:visibility="gone"
+                            app:civ_border_color="#FF000000"
+                            app:civ_border_width="2dp" />
+
+                    </RelativeLayout>
+
+
+                    <ScrollView
+                        android:id="@+id/fami_scroll"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/prfl_cover"
+                        android:layout_marginBottom="10dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_name_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Name:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_name"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_name_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_bday_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Birthday:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_bday"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_bday_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_weight_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Weight:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_weight"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_weight_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_height_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Height:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_height"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_height_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_sex_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Sex:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_sex"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_sex_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_last_consult_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Last Consultation:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_last_consult"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_last_consult_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/fami_consult_count_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="Consultation Count:"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/fami_consult_count"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@id/fami_consult_count_label"
+                                    android:fontFamily="sans-serif-light"
+                                    android:text="0"
+                                    android:textColor="@color/textColor"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </RelativeLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="20dp"
+                                android:background="@color/grey" />
+
+                            <Button
+                                android:id="@+id/fami_view_med_rec"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/shape_radius_001"
+                                android:text="View Medical Record" />
+
+                        </LinearLayout>
+
+                    </ScrollView>
+
+                    <LinearLayout
+                        android:id="@+id/fami_load"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical">
+
+                        <com.elyeproj.loaderviewlibrary.LoaderImageView
+                            android:id="@+id/shame_img"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="280dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="18dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="240dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="21dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="26dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="160dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="26dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="120dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="26dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="260dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="26dp" />
+
+                        <com.elyeproj.loaderviewlibrary.LoaderTextView
+                            android:layout_width="230dp"
+                            android:layout_height="25dp"
+                            android:layout_marginTop="26dp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ImageView
+        android:id="@+id/fami_no_net"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/img_no_internet"
+        android:visibility="gone" />
+
+</RelativeLayout>

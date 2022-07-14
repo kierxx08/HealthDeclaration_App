@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".doctor.doctor_activity_view_patient_medicine">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/davpm_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/doctor_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:id="@+id/nam_scroll"
+        android:layout_below="@+id/davpm_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="     Adding Medicine"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/davpm_illness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Illness"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textCursorDrawable="@android:color/black"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@android:color/black"
+                app:met_helperTextColor="@android:color/black"
+                app:met_primaryColor="@android:color/black"
+                app:met_textColor="@android:color/black"
+                app:met_underlineColor="@android:color/black" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/davpm_medicine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Medicine Name"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textCursorDrawable="@android:color/black"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@android:color/black"
+                app:met_helperTextColor="@android:color/black"
+                app:met_primaryColor="@android:color/black"
+                app:met_textColor="@android:color/black"
+                app:met_underlineColor="@android:color/black" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/davpm_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Amount"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textCursorDrawable="@android:color/black"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@android:color/black"
+                app:met_helperTextColor="@android:color/black"
+                app:met_primaryColor="@android:color/black"
+                app:met_textColor="@android:color/black"
+                app:met_underlineColor="@android:color/black" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/davpm_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Taking Time"
+                android:inputType="textCapCharacters|time"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textCursorDrawable="@android:color/black"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@android:color/black"
+                app:met_helperTextColor="@android:color/black"
+                app:met_primaryColor="@android:color/black"
+                app:met_textColor="@android:color/black"
+                app:met_underlineColor="@android:color/black" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/davpm_days"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="Taking Days"
+                android:inputType="number"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textCursorDrawable="@android:color/black"
+                app:met_baseColor="@android:color/black"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelTextColor="@android:color/black"
+                app:met_helperTextColor="@android:color/black"
+                app:met_primaryColor="@android:color/black"
+                app:met_textColor="@android:color/black"
+                app:met_underlineColor="@android:color/black" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/davpm_finish"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_circle_001"
+        android:src="@drawable/icon_check_green"
+        android:textAlignment="center"
+        android:translationZ="5dp" />
+
+</RelativeLayout>

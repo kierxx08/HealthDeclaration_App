@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#828282</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- <item name="android:windowTranslucentStatus">fa</item> -->
+        <item name="android:itemBackground">#ffffff</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="ThemeSpinner">
+        <!-- Color when pressed -->
+        <item name="colorAccent">#000000</item>
+        <!-- Default color for the dropdown arrow and line -->
+        <item name="colorControlNormal">#000000</item>
+    </style>
+
+    <style name="ThemeSpinner2">
+        <!-- Color when pressed -->
+        <item name="colorAccent">@color/admin_tc</item>
+        <!-- Default color for the dropdown arrow and line -->
+        <item name="colorControlNormal">@color/admin_tc</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColor">@color/admin_tc</item>
+        <item name="android:background">@color/admin_bg</item>
+        <item name="colorAccent">@color/admin_tc</item>
+    </style>
+
+
+
+    <style name="default_dialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="colorAccent">@android:color/holo_red_light</item>
+    </style>
+
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".about">
+
+    <ImageView
+        android:id="@+id/about_cover"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/about_cover" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/about_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-75dp"
+        android:layout_below="@id/about_cover"/>
+
+    <LinearLayout
+        android:layout_below="@id/about_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/about_version_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Version:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/about_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1.0"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/about_develop_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Developed By:"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/about_develop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rosemarie Anciado\nKier Kaye Asis\nJohn Paul Avila\n
+Pamella Lyka Magpantay\nNeil Valentin Perez"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textColor="@android:color/black" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nurse.nurse_activity_profile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/naf_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nurse_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/p_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kier"
+        android:layout_gravity="center"
+        android:textSize="50dp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

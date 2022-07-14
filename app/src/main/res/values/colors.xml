@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#66bb6a</color>
+    <color name="colorPrimaryDark">#2986f6</color>
+    <color name="colorAccent">#3700B3</color>
+
+    <color name="grey">#e3e0e0</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="textColor">#000000</color>
+
+
+    <color name="btn_disabled">#406E83</color>
+
+    <color name="admin_bg">#353c55</color>
+    <color name="admin_tc">#ffffff</color>
+</resources>

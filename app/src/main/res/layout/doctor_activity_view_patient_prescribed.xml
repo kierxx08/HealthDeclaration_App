@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".doctor.doctor_activity_view_patient_prescribe">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/dvpp_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/doctor_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+
+    <com.leo.simplearcloader.SimpleArcLoader
+        android:id="@+id/davpp_loader"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:visibility="visible"
+        app:arc_style="simple_arc"></com.leo.simplearcloader.SimpleArcLoader>
+
+    <ImageView
+        android:id="@+id/davpp_no_net"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/img_no_internet"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/davpp_no_data"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/img_no_data_found"
+        android:visibility="gone" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/davpp_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/dvpp_toolbar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/davpp_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:text="     Patient Information"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/nap_doctor_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Doctor ID:"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/nap_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Result No.:"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/davp_mem_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Member ID:"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/davp_fullname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Patient Name:" />
+
+                        <TextView
+                            android:id="@+id/davp_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Patient Age:" />
+
+                        <TextView
+                            android:id="@+id/davp_height"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Patient Height:" />
+
+                        <TextView
+                            android:id="@+id/davp_weight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Patient Weight:" />
+
+                        <TextView
+                            android:id="@+id/davp_temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Patient Temp.:" />
+
+                        <TextView
+                            android:id="@+id/davp_bp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Patient BP:" />
+
+                        <TextView
+                            android:id="@+id/davp_sick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Patient Illness:" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorPrimary"
+                            android:text="     Prescription"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/davpp_med_load"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <com.elyeproj.loaderviewlibrary.LoaderImageView
+                                android:id="@+id/shame_img"
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="5dp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/shame_img"
+                                android:orientation="vertical">
+
+                                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp" />
+
+                                <com.elyeproj.loaderviewlibrary.LoaderTextView
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp" />
+                            </LinearLayout>
+
+                            <com.elyeproj.loaderviewlibrary.LoaderImageView
+                                android:id="@+id/shame_img2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="8dp" />
+
+                            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/shame_img2"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginTop="53dp"
+                                android:layout_marginRight="8dp" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/damvp_prescribe_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="1dp"
+                            android:layout_marginEnd="1dp"
+                            android:visibility="visible" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp" />
+
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ImageView
+        android:id="@+id/davpp_add"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/shape_circle_001"
+        android:src="@drawable/icon_add_green"
+        android:textAlignment="center"
+        android:translationZ="5dp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/davpp_finish"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_circle_001"
+        android:src="@drawable/icon_check_green"
+        android:textAlignment="center"
+        android:translationZ="5dp"
+        android:visibility="gone" />
+
+</RelativeLayout>
